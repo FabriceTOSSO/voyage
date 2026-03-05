@@ -3026,8 +3026,8 @@ function showHome() {
 
 
 // ==================== MESSAGE DE SUCCÈS STYLÉ ====================
-// ==================== MESSAGE DE SUCCÈS STYLÉ AVEC VARIANTE ====================
-function showSuccessMessage(formType) {
+// ==================== MESSAGE DE SUCCÈS STYLÉ AVEC CALLBACK ====================
+function showSuccessMessage(formType, onClose) {
     // Bloquer le défilement de la page
     document.body.style.overflow = 'hidden';
     
@@ -3205,10 +3205,13 @@ function showSuccessMessage(formType) {
     overlay.appendChild(messageCard);
     document.body.appendChild(overlay);
 
-    // Fonction pour fermer et réactiver le défilement
+    // Fonction pour fermer et exécuter le callback
     function closeMessage() {
         document.body.style.overflow = '';
         overlay.remove();
+        if (onClose && typeof onClose === 'function') {
+            onClose(); // Exécuter le callback pour soumettre le formulaire
+        }
     }
 
     // Ajouter les événements de fermeture
@@ -3336,7 +3339,7 @@ function initializeForm(formType) {
         });
     });
     
-   // === GESTION DE LA SOUMISSION (VERSION FORMSUBMIT) ===
+   // ==================== GESTION DE LA SOUMISSION (VERSION FORMSUBMIT) ===
 form.addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -3429,19 +3432,19 @@ form.addEventListener('submit', function(e) {
         });
     });
     
-    // Ajouter le formulaire au body et le soumettre
+    // Ajouter le formulaire au body
     document.body.appendChild(tempForm);
     
-    // Afficher le message de succès
-    showSuccessMessage(formType.toLowerCase());
-    
-    // Soumettre le formulaire
-    tempForm.submit();
-    
-    // Nettoyer après soumission
-    setTimeout(() => {
-        document.body.removeChild(tempForm);
-    }, 1000);
+    // Afficher le message de succès avec un callback pour la soumission
+    showSuccessMessage(formType.toLowerCase(), function() {
+        // Une fois que l'utilisateur clique sur "Fermer", on soumet le formulaire
+        tempForm.submit();
+        
+        // Nettoyer après soumission
+        setTimeout(() => {
+            document.body.removeChild(tempForm);
+        }, 1000);
+    });
 });
 }
 
