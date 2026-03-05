@@ -3336,7 +3336,7 @@ function initializeForm(formType) {
         });
     });
     
-    // === GESTION DE LA SOUMISSION (VERSION CORRIGÉE) ===
+   // === GESTION DE LA SOUMISSION (VERSION FORMSUBMIT) ===
 form.addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -3366,73 +3366,82 @@ form.addEventListener('submit', function(e) {
         return;
     }
     
-    // === COLLECTER TOUTES LES DONNÉES DE TOUTES LES ÉTAPES ===
-    const allSteps = form.querySelectorAll('.form-step');
-    const formData = new FormData();
-    const data = {};
+    // === CRÉER UN FORMULAIRE CACHÉ POUR FORMSUBMIT ===
+    // Récupérer le type de formulaire
+    const formType = form.id === 'formEtudier' ? 'Études' : 
+                     form.id === 'formTravailler' ? 'Travail' : 'Résidence';
     
-    // Parcourir chaque étape
+    // Créer un formulaire temporaire
+    const tempForm = document.createElement('form');
+    tempForm.method = 'POST';
+    tempForm.action = 'https://formsubmit.co/rightwaycanadaservice@gmail.com'; // VOTRE EMAIL ICI
+    tempForm.enctype = 'multipart/form-data';
+    tempForm.style.display = 'none';
+    
+    // Ajouter les configurations FormSubmit
+    const configs = [
+        { name: '_subject', value: `Nouvelle demande - ${formType} - RightWay Canada` },
+        { name: '_template', value: 'box' },
+        { name: '_captcha', value: 'false' },
+        { name: '_next', value: window.location.href }, // Retour à la page après envoi
+        { name: '_autoresponse', value: 'Merci pour votre demande. Notre équipe vous contactera dans les plus brefs délais.' }
+    ];
+    
+    configs.forEach(config => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = config.name;
+        input.value = config.value;
+        tempForm.appendChild(input);
+    });
+    
+    // Récupérer TOUTES les données de TOUTES les étapes
+    const allSteps = form.querySelectorAll('.form-step');
+    
     allSteps.forEach((step, stepIndex) => {
-        // Récupérer tous les champs de l'étape (pas seulement required)
         const fields = step.querySelectorAll('input, select, textarea');
         
         fields.forEach(field => {
             if (field.name && field.name.trim() !== '') {
-                let value = field.value;
-                
-                // Gérer les fichiers
                 if (field.type === 'file' && field.files.length > 0) {
-                    // Pour les fichiers, on ne peut pas les afficher dans data,
-                    // mais on les ajoute à FormData
+                    // Pour les fichiers, on les ajoute directement
                     for (let i = 0; i < field.files.length; i++) {
-                        formData.append(field.name, field.files[i]);
+                        const fileInput = document.createElement('input');
+                        fileInput.type = 'file';
+                        fileInput.name = `${field.name}_${i+1}`;
+                        
+                        // Créer un DataTransfer pour copier le fichier
+                        const dt = new DataTransfer();
+                        dt.items.add(field.files[i]);
+                        fileInput.files = dt.files;
+                        
+                        tempForm.appendChild(fileInput);
                     }
-                    value = `[Fichier: ${field.files[0].name}]`;
-                }
-                
-                // Ajouter à l'objet data (pour l'affichage console)
-                if (!data[field.name] || data[field.name] === '') {
-                    data[field.name] = value;
-                }
-                
-                // Ajouter à FormData (pour l'envoi réel)
-                if (field.type !== 'file') {
-                    formData.append(field.name, value);
+                } else {
+                    // Pour les champs texte, on crée des inputs hidden
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = field.name;
+                    input.value = field.value;
+                    tempForm.appendChild(input);
                 }
             }
         });
     });
     
-    // Afficher TOUTES les données collectées dans la console
-    console.log('=== TOUTES LES DONNÉES DU FORMULAIRE ===');
-    console.log(data);
-    console.log('=== FICHIERS JOINTS ===');
-    for (let pair of formData.entries()) {
-        if (pair[1] instanceof File) {
-            console.log(pair[0], pair[1].name);
-        }
-    }
+    // Ajouter le formulaire au body et le soumettre
+    document.body.appendChild(tempForm);
     
-    // Ici, vous pouvez envoyer formData à votre serveur
-    // Par exemple avec fetch :
-    /*
-    fetch('votre-url-de-traitement', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(result => {
-        alert('Votre demande a été envoyée avec succès !');
-        showHome();
-    })
-    .catch(error => {
-        alert('Erreur lors de l\'envoi. Veuillez réessayer.');
-    });
-    */
+    // Afficher le message de succès
+    showSuccessMessage(formType.toLowerCase());
     
-    // Pour l'instant, simulation d'envoi réussi
-   showSuccessMessage(formType);
-    showHome();
+    // Soumettre le formulaire
+    tempForm.submit();
+    
+    // Nettoyer après soumission
+    setTimeout(() => {
+        document.body.removeChild(tempForm);
+    }, 1000);
 });
 }
 
