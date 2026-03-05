@@ -759,9 +759,9 @@ header.scrolled .site-name-gradient {
             </div>
             <div class="footer-section">
                 <h4>Contact</h4>
-                <p>Email: agenceboolky6@gmail.com</p>
-                <p>Tél: +1 (514) 000-0000</p>
-                <p>Montréal, Québec, Canada</p>
+                <p>Email: rightwaycanadaservice@gmail.com</p>
+                <p>Tél: +1 (437) 890-9488</p>
+                <p>Montréal, Québec, Toronto Canada</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -1265,10 +1265,7 @@ header.scrolled .site-name-gradient {
                                 <label>Diplôme obtenu *</label>
                                 <input type="text" name="diplome" placeholder="Ex: BAC D, Licence en droit..." required>
                             </div>
-                            <div class="form-group">
-                                <label>Série / Mention *</label>
-                                <input type="text" name="serie" placeholder="Ex: D, C, A, ou Mention Bien" required>
-                            </div>
+                           
                             <div class="form-group">
                                 <label>Année d'obtention *</label>
                                 <input type="number" name="annee_obtention" min="1970" max="2024" required>
@@ -1381,14 +1378,70 @@ header.scrolled .site-name-gradient {
                             <div class="form-group">
                                 <label>Université / Collège souhaité *</label>
                                 <select name="choix_ecole" required>
-                                    <option value="">Sélectionnez</option>
-                                    <option value="toronto">University of Toronto</option>
-                                    <option value="british_columbia">University of British Columbia</option>
-                                    <option value="mcgill">McGill University</option>
-                                    <option value="alberta">University of Alberta</option>
-                                    <option value="montreal">Université de Montréal</option>
-                                    <option value="concordia">Concordia University</option>
-                                    <option value="autre">Autre</option>
+                                   <option value="">Sélectionnez</option>
+
+<!-- Ontario -->
+<option value="university_of_toronto">University of Toronto</option>
+<option value="york_university">York University</option>
+<option value="toronto_metropolitan">Toronto Metropolitan University (TMU)</option>
+<option value="university_of_ottawa">University of Ottawa</option>
+<option value="carleton_university">Carleton University</option>
+<option value="western_university">Western University</option>
+<option value="queens_university">Queen’s University</option>
+<option value="mcmaster_university">McMaster University</option>
+<option value="university_of_waterloo">University of Waterloo</option>
+<option value="wilfrid_laurier">Wilfrid Laurier University</option>
+<option value="trent_university">Trent University</option>
+<option value="lakehead_university">Lakehead University</option>
+<option value="brock_university">Brock University</option>
+<option value="university_of_guelph">University of Guelph</option>
+
+<!-- Québec -->
+<option value="mcgill_university">McGill University</option>
+<option value="universite_montreal">Université de Montréal</option>
+<option value="universite_laval">Université Laval</option>
+<option value="uqam">Université du Québec à Montréal (UQAM)</option>
+<option value="universite_sherbrooke">Université de Sherbrooke</option>
+<option value="concordia_university">Concordia University</option>
+<option value="ets">École de technologie supérieure (ÉTS)</option>
+<option value="uqtr">Université du Québec à Trois-Rivières (UQTR)</option>
+<option value="uqac">Université du Québec à Chicoutimi (UQAC)</option>
+<option value="uqar">Université du Québec à Rimouski (UQAR)</option>
+
+<!-- Colombie-Britannique -->
+<option value="ubc">University of British Columbia (UBC)</option>
+<option value="simon_fraser">Simon Fraser University</option>
+<option value="university_victoria">University of Victoria</option>
+<option value="thompson_rivers">Thompson Rivers University</option>
+<option value="capilano_university">Capilano University</option>
+<option value="vancouver_island">Vancouver Island University</option>
+
+<!-- Alberta -->
+<option value="university_of_alberta">University of Alberta</option>
+<option value="university_of_calgary">University of Calgary</option>
+<option value="mount_royal">Mount Royal University</option>
+<option value="athabasca">Athabasca University</option>
+
+<!-- Manitoba -->
+<option value="university_of_manitoba">University of Manitoba</option>
+<option value="university_of_winnipeg">University of Winnipeg</option>
+
+<!-- Saskatchewan -->
+<option value="university_of_saskatchewan">University of Saskatchewan</option>
+<option value="university_of_regina">University of Regina</option>
+
+<!-- Provinces de l’Atlantique -->
+<option value="dalhousie">Dalhousie University</option>
+<option value="saint_marys">Saint Mary’s University</option>
+<option value="acadia">Acadia University</option>
+<option value="mount_allison">Mount Allison University</option>
+<option value="memorial_newfoundland">Memorial University of Newfoundland</option>
+<option value="u_pei">University of Prince Edward Island</option>
+
+<!-- Territoires / Nord -->
+<option value="yukon_university">Yukon University</option>
+
+<option value="autre">Autre</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -1610,10 +1663,7 @@ header.scrolled .site-name-gradient {
                                     <option value="autre">Autre</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label>Budget disponible (en $ CAD) *</label>
-                                <input type="number" name="budget" placeholder="Ex: 50000" required>
-                            </div>
+                           
                         </div>
 
                         <div class="form-group">
@@ -1823,10 +1873,7 @@ header.scrolled .site-name-gradient {
                                 <label>Poste actuel</label>
                                 <input type="text" name="poste_actuel">
                             </div>
-                            <div class="form-group">
-                                <label>Période d'emploi actuelle</label>
-                                <input type="text" name="periode_emploi" placeholder="Ex: Janvier 2020 - Aujourd'hui">
-                            </div>
+                            
                         </div>
                         
                         <h4 style="margin: 30px 0 20px; color: #2c3e50;">Expériences précédentes</h4>
@@ -1923,18 +1970,78 @@ header.scrolled .site-name-gradient {
                             <div class="form-group">
                                 <label>Secteur d'activité souhaité *</label>
                                 <select name="secteur_souhaite" required>
-                                    <option value="">Sélectionnez</option>
-                                    <option value="ouvrier">Ouvrier</option>
-                                    <option value="chauffeur">Chauffeur</option>
-                                    <option value="soudeur">Soudeur</option>
-                                    <option value="informaticien">Informaticien</option>
-                                    <option value="serveur">Serveur</option>
-                                    <option value="agent_securite">Agent de sécurité</option>
-                                    <option value="nettoyage">Nettoyage</option>
-                                    <option value="agriculture">Agriculture</option>
-                                    <option value="construction">Construction</option>
-                                    <option value="restauration">Restauration</option>
-                                    <option value="autre">Autre</option>
+                                   <option value="">Sélectionnez</option>
+
+<!-- Construction & BTP -->
+<option value="ouvrier_construction">Ouvrier en construction</option>
+<option value="manoeuvre_btp">Manœuvre BTP</option>
+<option value="macon">Maçon</option>
+<option value="charpentier">Charpentier</option>
+<option value="menuisier">Menuisier</option>
+<option value="plombier">Plombier</option>
+<option value="electricien">Électricien</option>
+<option value="soudeur">Soudeur</option>
+<option value="peintre_batiment">Peintre en bâtiment</option>
+<option value="couvreur">Couvreur</option>
+<option value="conducteur_engins">Conducteur d’engins</option>
+
+<!-- Transport & Logistique -->
+<option value="chauffeur">Chauffeur</option>
+<option value="chauffeur_lourd">Chauffeur poids lourd</option>
+<option value="livreur">Livreur</option>
+<option value="magasinier">Magasinier</option>
+<option value="cariste">Cariste</option>
+<option value="agent_logistique">Agent logistique</option>
+
+<!-- Agriculture & Agroalimentaire -->
+<option value="ouvrier_agricole">Ouvrier agricole</option>
+<option value="agriculteur">Agriculteur</option>
+<option value="elevage">Ouvrier d’élevage</option>
+<option value="horticulteur">Horticulteur</option>
+<option value="ouvrier_agroalimentaire">Ouvrier agroalimentaire</option>
+
+<!-- Hôtellerie & Restauration -->
+<option value="serveur">Serveur</option>
+<option value="cuisinier">Cuisinier</option>
+<option value="aide_cuisinier">Aide-cuisinier</option>
+<option value="plongeur">Plongeur</option>
+<option value="barman">Barman</option>
+<option value="receptionniste">Réceptionniste</option>
+<option value="agent_hotellerie">Agent d’hôtellerie</option>
+
+<!-- Entretien & Services -->
+<option value="agent_entretien">Agent d’entretien</option>
+<option value="nettoyage">Agent de nettoyage</option>
+<option value="femme_menage">Femme de ménage</option>
+<option value="homme_menage">Homme de ménage</option>
+<option value="agent_securite">Agent de sécurité</option>
+<option value="gardien">Gardien</option>
+
+<!-- Industrie & Usine -->
+<option value="operateur_usine">Opérateur d’usine</option>
+<option value="conducteur_machine">Conducteur de machine</option>
+<option value="assembleur">Assembleur</option>
+<option value="technicien_industriel">Technicien industriel</option>
+
+<!-- Santé & Aide à la personne -->
+<option value="aide_soignant">Aide-soignant</option>
+<option value="prepose_beneficiaire">Préposé aux bénéficiaires</option>
+<option value="assistant_personne">Assistant de vie</option>
+
+<!-- Informatique & Bureau -->
+<option value="informaticien">Informaticien</option>
+<option value="technicien_informatique">Technicien informatique</option>
+<option value="technicien_reseau">Technicien réseau</option>
+<option value="assistant_administratif">Assistant administratif</option>
+<option value="secretaire">Secrétaire</option>
+<option value="comptable">Comptable</option>
+
+<!-- Commerce -->
+<option value="vendeur">Vendeur</option>
+<option value="caissier">Caissier</option>
+<option value="commercial">Commercial</option>
+
+<option value="autre">Autre</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -2919,7 +3026,50 @@ function showHome() {
 
 
 // ==================== MESSAGE DE SUCCÈS STYLÉ ====================
-function showSuccessMessage() {
+// ==================== MESSAGE DE SUCCÈS STYLÉ AVEC VARIANTE ====================
+function showSuccessMessage(formType) {
+    // Bloquer le défilement de la page
+    document.body.style.overflow = 'hidden';
+    
+    // Configurer le message selon le type de formulaire
+    let messageConfig = {
+        title: "Demande envoyée !",
+        icon: "📧",
+        message: "Nous vous confirmons la bonne réception et la transmission de votre demande.",
+        nextStep: "En cas d'acceptation de votre profil par une entreprise partenaire, vous recevrez une lettre d'admission officielle par courrier électronique (Gmail)."
+    };
+    
+    // Personnaliser selon le type de formulaire
+    if (formType === 'etudier') {
+        messageConfig = {
+            title: "Demande d'études envoyée !",
+            icon: "🎓",
+            message: "Votre dossier d'inscription a bien été reçu et transmis à notre équipe.",
+            nextStep: "Notre équipe académique analysera votre dossier et vous contactera sous 48-72h pour discuter des programmes qui correspondent à votre profil."
+        };
+    } else if (formType === 'travailler') {
+        messageConfig = {
+            title: "Candidature professionnelle envoyée !",
+            icon: "💼",
+            message: "Nous vous confirmons la bonne réception et la transmission de votre candidature.",
+            nextStep: "En cas d'acceptation de votre profil par une entreprise partenaire, vous recevrez une lettre d'admission officielle par courrier électronique (Gmail)."
+        };
+    } else if (formType === 'residence') {
+        messageConfig = {
+            title: "Demande de résidence envoyée !",
+            icon: "🍁",
+            message: "Votre demande d'évaluation pour la résidence permanente a bien été reçue.",
+            nextStep: "Un de nos consultants en immigration analysera votre dossier et vous contactera pour une consultation personnalisée dans les plus brefs délais."
+        };
+    } else if (formType === 'a-propos') {
+        messageConfig = {
+            title: "Message envoyé !",
+            icon: "📬",
+            message: "Votre message a bien été transmis à notre équipe.",
+            nextStep: "Nous vous répondrons dans les plus brefs délais. Merci de votre intérêt pour RightWay Canada Immigration Service."
+        };
+    }
+    
     // Créer l'overlay
     const overlay = document.createElement('div');
     overlay.style.cssText = `
@@ -2943,9 +3093,10 @@ function showSuccessMessage() {
         background: white;
         max-width: 500px;
         width: 90%;
+        max-height: 90vh;
+        overflow-y: auto;
         border-radius: 20px;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        overflow: hidden;
         animation: slideUp 0.4s ease;
         font-family: 'Segoe UI', Roboto, sans-serif;
     `;
@@ -2981,7 +3132,7 @@ function showSuccessMessage() {
             font-size: 28px;
             font-weight: 600;
             letter-spacing: 0.5px;
-        ">Demande envoyée !</h2>
+        ">${messageConfig.title}</h2>
     `;
 
     // Corps du message
@@ -2999,7 +3150,7 @@ function showSuccessMessage() {
             line-height: 1.6;
             margin: 0 0 20px 0;
         ">
-            Nous vous confirmons la bonne réception et la transmission de votre demande.
+            ${messageConfig.message}
         </p>
         <div style="
             background: #f8f9fa;
@@ -3017,67 +3168,71 @@ function showSuccessMessage() {
                 align-items: center;
                 gap: 10px;
             ">
-                <span style="font-size: 24px;">📧</span>
-                <strong>Prochaine étape :</strong> En cas d'acceptation de votre profil par une entreprise partenaire, vous recevrez une lettre d'admission officielle par courrier électronique (Gmail).
+                <span style="font-size: 24px;">${messageConfig.icon}</span>
+                <strong>Prochaine étape :</strong> ${messageConfig.nextStep}
             </p>
         </div>
         <p style="
             color: #7f8c8d;
             font-size: 15px;
-            margin: 20px 0 10px 0;
+            margin: 20px 0 30px 0;
         ">
             Notre équipe analysera votre dossier dans les plus brefs délais.
         </p>
+        <button id="closeSuccessMessage" style="
+            background: linear-gradient(135deg, #2c3e50, #c0392b);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(192, 57, 43, 0.3);
+            margin-top: 20px;
+        "
+        onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 25px rgba(192, 57, 43, 0.4)';"
+        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 5px 15px rgba(192, 57, 43, 0.3)';"
+        >
+            Fermer
+        </button>
     `;
-
-    // Bouton de fermeture
-    const button = document.createElement('button');
-    button.style.cssText = `
-        background: #c0392b;
-        color: white;
-        border: none;
-        padding: 15px 40px;
-        font-size: 18px;
-        font-weight: 600;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        margin: 20px 0 10px 0;
-        box-shadow: 0 5px 15px rgba(192, 57, 43, 0.3);
-    `;
-    button.innerHTML = 'Fermer';
-    button.onmouseover = () => {
-        button.style.background = '#a33022';
-        button.style.transform = 'translateY(-2px)';
-        button.style.boxShadow = '0 8px 20px rgba(192, 57, 43, 0.4)';
-    };
-    button.onmouseout = () => {
-        button.style.background = '#c0392b';
-        button.style.transform = 'translateY(0)';
-        button.style.boxShadow = '0 5px 15px rgba(192, 57, 43, 0.3)';
-    };
-    button.onclick = () => {
-        document.body.removeChild(overlay);
-        showHome();
-    };
 
     // Assembler la carte
-    body.appendChild(button);
     messageCard.appendChild(header);
     messageCard.appendChild(body);
     overlay.appendChild(messageCard);
+    document.body.appendChild(overlay);
+
+    // Fonction pour fermer et réactiver le défilement
+    function closeMessage() {
+        document.body.style.overflow = '';
+        overlay.remove();
+    }
+
+    // Ajouter les événements de fermeture
+    document.getElementById('closeSuccessMessage').addEventListener('click', closeMessage);
     
-    // Ajouter les animations
+    // Fermer en cliquant sur l'overlay (mais pas sur la carte)
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) {
+            closeMessage();
+        }
+    });
+
+    // Ajouter les animations CSS si elles n'existent pas
     const style = document.createElement('style');
-    style.innerHTML = `
+    style.textContent = `
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        
         @keyframes slideUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(50px);
             }
             to {
                 opacity: 1;
@@ -3085,6 +3240,7 @@ function showSuccessMessage() {
             }
         }
     `;
+   
     document.head.appendChild(style);
     
     // Afficher
@@ -3275,7 +3431,7 @@ form.addEventListener('submit', function(e) {
     */
     
     // Pour l'instant, simulation d'envoi réussi
-   showSuccessMessage();
+   showSuccessMessage(formType);
     showHome();
 });
 }
